@@ -33,8 +33,7 @@ export const BuyScreen = ({ stockItem, setThx }: Props) => {
     setLoading(true);
     sendDataToGA({
       sum: stockItem.price_today * lots * stockItem.lot,
-      ticker: stockItem.ticker,
-      smart: 'off',
+      active: stockItem.ticker,
     }).then(() => {
       LS.setItem(LSKeys.ShowThx, true);
       setThx(true);
